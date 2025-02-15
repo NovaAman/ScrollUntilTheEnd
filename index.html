@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Just scroll until the end.</title>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DynaPuff:wght@400..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./style.css">
+    <style>
+        /* Base Styles */
+
+        
+        
+        html, body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+}
+.ced{
+    display: flex;
+    justify-content: center;
+}
+.container1 {
+    max-width: 100%;
+    overflow: hidden; /* Hide any overflowing content */
+}
+
+img {
+    max-width: 100%;
+    height: auto; /* Responsive images */
+}
+
+        #preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: black; /* Change this to match your site's background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999; /* Ensure it's above all other content */
+        }
+        
+        
+        body {
+            background: linear-gradient(45deg, #fa4c4c, #021222);
+            overflow-x: hidden;
+        } 
+        * {
+            
+            box-sizing: border-box;
+            font-family: 'Poppins', cursive;
+        }
+
+        .container{
+    position: relative;
+    margin-left: 40px;
+    margin-top: 130px;
+    margin-bottom: 20px;
+        }
+
+
+
+
+        #glass{
+    height: 100vh;
+    width: 300px;
+    margin-left: 30px;
+    padding: 30px 50px;
+    border-radius: 20px;
+    background-color: rgba(255, 255, 255, 0.078);
+    backdrop-filter: blur(8px);
+    border-top: 1px solid rgba(255, 255, 255, 0.4);
+    border-left: 1px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 3px 3px 3px rgba(0,0,0,0.089) ;
+}
+
+
+#glass2{
+    margin-left: 30px;
+    height: 100vh;
+    width: 300px;
+    padding: 30px 50px;
+    border-radius: 20px;
+    background-color: rgba(255, 255, 255, 0.078);
+    backdrop-filter: blur(8px);
+    border-top: 1px solid rgba(255, 255, 255, 0.4);
+    border-left: 1px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 3px 3px 3px rgba(0,0,0,0.089) ;
+    margin-bottom: 10px;
+}
+
+
+
+.cursor {
+    display: inline-block;
+    animation: blink 0.7s step-end infinite;
+}
+
+@keyframes blink {
+    50% {
+        opacity: 0;
+    }
+}
+
+
+
+
+
+
+
+
+
+<div class="ced">        
+.valentines{
+    position: relative;
+    left: 25%;
+    top: 50px;
+    cursor: pointer;
+    animation: up 3s linear infinite;
+}
+.envelope{
+    position: relative;
+    width: 300px;
+    height: 200px;
+    background: #f08080;
+    display: grid;
+    place-items: center;
+    margin-top: 10px;
+}
+.envelope::before{
+    content: '';
+    position: absolute;
+    width: 212px;
+    height: 212px;
+    background: #f08080;
+    transform: rotate(45deg);
+    top: -105px;
+    left: 44px;
+    border-radius: 30px 0 0 0;
+}
+.front{
+    position: absolute;
+    left: 120px;
+    top: 5px;
+    
+    border-right: 180px solid #f4978e;
+    border-top: 95px solid transparent;
+    border-bottom: 100px solid transparent;
+    width: 0;
+    height: 0;
+    z-index: 10;
+}
+.front::before{
+    position: absolute;
+    content: '';
+    border-left: 300px solid #fda996;
+    border-top: 195px solid transparent;
+    left: -120px;
+    top: -95px;
+}
+.card{
+    position: relative;
+    width: 250px;
+    height: 180px;
+    background: #fff;
+    border-radius: 2px;
+    display: grid;
+    place-items: center;
+    transition: 1s;
+}
+.card::before{
+    content: '';
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    right: 10px;
+    bottom: 10px;
+    border: 2px solid #003049;
+    border-style: dashed;
+}
+.valentines:hover .card{
+    transform: translateY(-100px);
+}
+.card .text{
+    font-family: 'Brush Script MT', cursive;
+    font-size: 28px;
+    text-align: center;
+    line-height: 25px;
+    color: #003049;
+}
+.card .heart{
+    position: relative;
+    width: 35px;
+    height: 35px;
+    background: red;
+    bottom: 20px;
+    transform: rotate(45deg);
+    border-radius: 50% 0 0 50%;
+}
+.card .heart::before{
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: red;
+    border-radius: 0 50% 50% 0;
+    right: 0;
+    transform: rotate(-90deg);
+    transform-origin: top;
+}
+.card .heart::after{
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: red;
+    right: -18px;
+}
+</div>        
+@keyframes up{
+    0%, 100%{
+        transform: translateY(0);
+    }
+    50%{
+        transform: translateY(-30px);
+    }
+}
+.valentines::before{
+    content: '';
+    position: absolute;
+    width: 330px;
+    height: 25px;
+    border-radius: 50%;
+    background: rgba(0, 0, 0, .3);
+    top: 265px;
+    left: -15px;
+    animation: scale 3s linear infinite;
+}
+@keyframes scale{
+    0%, 100%{
+        transform: scaleX(1);
+    }
+    50%{
+        transform: scaleX(.85);
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        /* Messages */
+        .message {
+            padding: 1px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 0.05s ease-out;
+            text-align: center;
+            margin-bottom: 25px;
+        }
+
+       
+
+        
+
+        .message-text {
+            font-size: 15px;
+            color: #ffffff;
+            margin-bottom: 20px;
+            padding: 0 5px;
+            font-family: 'Pacifico', cursive;
+        }
+
+        .message-gif {
+            width: min(300px, 80%);
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            margin: 20px 0;
+            transition: transform 0.3s ease;
+        }
+
+        .message-gif:hover {
+            transform: scale(1.05);
+        }
+
+        /* Gift Box */
+        .gift-box {
+            position: relative;
+            bottom: 10px;
+            left: 85%;
+            transform: translateX(-50%);
+            font-size: 5rem;
+            cursor: pointer;
+            opacity: 1;
+            z-index: 1000;
+            filter: drop-shadow(0 5px 15px rgba(0,0,0,0.3));
+            transition: all 0.5s;
+        }
+
+        .gift-box.visible {
+            opacity: 1;
+            animation: float 2s ease-in-out infinite;
+        }
+
+        .gift-message {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 3rem;
+            color: #ffffff;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            opacity: 0;
+            z-index: 1001;
+            font-family: 'Pacifico', cursive;
+        }
+
+        /* Confetti */
+        .confetti {
+            position: fixed;
+            width: 12px;
+            height: 12px;
+            background: #ff0000;
+            pointer-events: none;
+            border-radius: 50%;
+        }
+
+        /* Animations */
+        @keyframes float {
+            0%, 100% { transform: translate(-50%, 0); }
+            50% { transform: translate(-50%, -20px); }
+        }
+
+        @keyframes messageEntry {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .visible {
+            animation: messageEntry 1s forwards;
+        }
+
+        .openit{
+            color: white;
+            text-align: center;
+        }
+
+        h3{
+            font-family:"DynaPuff";
+        }
+
+        
+    </style>
+</head>
+<body>
+
+       <div id="preloader">
+     <img id="ld" src="./loading.gif">
+     <h2></h2>
+       
+       </div>
+
+    
+    <div id=class="container1">
+        <div id="glass" class="message">
+            <div class="message-text">
+                <div class="message-text">"Hi My Queen Arsu 👸<br>Just felt making you scroll😊"</div>
+                <img src="https://media4.giphy.com/media/YrZECW1GgBkqat6F0B/giphy.gif?cid=6c09b952g7qvkupa2nrft9wbn8ib84mlz5dscmn54a6zs5s3&ep=v1_internal_gif_by_id&rid=giphy.gif&ct=g">
+            </div>
+            
+
+        </div>
+        
+        <div id="glass" class="message">
+            <div class="message-text">"How is your day going?"<br></div>
+            <img src="https://media2.giphy.com/media/JuyhnRiWcPlAumeXnD/giphy.gif?cid=6c09b952wbb3dand6se0y0soyqzxzlxkr2xgw8r37uvvffkn&ep=v1_internal_gif_by_id&rid=giphy.gif&ct=g">
+        </div>
+
+        <div id="glass" class="message">
+            <div class="message-text">"Wait,<br> why are you scrolling?🧐Did someone say 'free cookies'?"</div>
+            
+        </div>
+        
+        <div id="glass" class="message">
+            <div class="message-text">"Okay fine,no cookies.<br> But just keep going... there's a 0.001% chance of free cookies"</div>
+            <img src="https://media4.giphy.com/media/WY4jmvO0OUV2WitDdZ/giphy.gif?cid=6c09b952eumvccsjfqfpuaglprn8ocdgk1il1jesxgtyy0e6&ep=v1_internal_gif_by_id&rid=giphy.gif&ct=g">
+        </div>
+
+        <div id="glass" class="message">
+            <div class="message-text">"Are you tired of scrolling?😁 <br>Just keep going"</div>
+            
+        </div>
+        
+        <div id="glass" class="message">
+            <div class="message-text">"Okay,you're halfway to... something. <br>What is the prize? ¯\_(ツ)_/¯"</div>
+            
+        </div>
+
+        <div id="glass" class="message">
+            <div class="message-text">"This is a very long journey"</div>
+
+        </div>
+
+        <div id="glass" class="message">
+            <div class="message-text">""Pro tip: The secret is in the 327th scroll... <br> just kidding, keep going!""</div>
+        
+        </div>
+
+        <div id="glass" class="message">
+            <div class="message-text">Have a popcorn while scrolling 🍿</div>
+            <img src="https://media1.giphy.com/media/ggephz889OmiVCWfsZ/giphy.gif?cid=6c09b952hm59kb369zu4pu115jwn1omb7pofye8837orjgt8&ep=v1_internal_gif_by_id&rid=giphy.gif&ct=g">
+        </div>
+
+        <div id="glass" class="message">
+            <div class="message-text">Keep going just a little more 😁</div>
+        
+        </div>
+
+        <div id="glass" class="message">
+            <div class="message-text">Fun fact: this took me more than expected <br>But you deserve it.</div>
+            <img src="https://media2.giphy.com/media/h5hDpOeyEAFR2DKz4N/giphy.gif?cid=6c09b9528sg7ts7d4hc8xp82ecqee33y99gf180p4wuzrfap&ep=v1_internal_gif_by_id&rid=giphy.gif&ct=g">
+        
+        </div>
+
+        <div id="glass" class="message">
+            <div class="message-text">"Drumroll... 🥁 🥁 🥁"</div>
+            
+        </div>
+        
+
+        <div id="glass" class="message">
+            <div class="message-text">"3...,2...,1...<br> Prepare for the liftoff!"</div>
+            
+        </div>
+
+        <div id="glass" class="message">
+            <div class="message-text">"Congratulations! you've scrolled 10,000miles. <br> Your reward is..."</div>
+            <img src="https://media1.giphy.com/media/X9izlczKyCpmCSZu0l/giphy.gif?cid=6c09b952vk0xecpf6iwmc53ass8roe7hu7u23o5gfka0na0v&ep=v1_internal_gif_by_id&rid=giphy.gif&ct=g">
+        </div>
+
+        <!-- Add more messages with GIFs here -->
+
+        <div id="glass2" class="message birthday">
+            <div class="message-text">SURPRISE!<br>🎉Happy Birthday to You Arsu 🌹<br> Even though we didn't meet for long time Every moment spent with you is a treasure, and I’m so grateful for the joy you bring into my world. On this special day, I wish you all the happiness your heart can hold. May your dreams come true, and may this year be filled with unforgettable adventures and beautiful memories. You deserve all the wonderful things life has to offer. Enjoy your special day to the fullest! 🎉❤️
+            
+            </div>
+            <img src="https://media0.giphy.com/media/CiNLOB9e3I1Za0oxhp/giphy.gif?cid=6c09b952ztbse16r4uamjoqcgw1kgyxzqk7he1gls59i3458&ep=v1_internal_gif_by_id&rid=giphy.gif&ct=g">
+        </div>
+    </div>
+
+    
+
+    <div><h3  class="openit">open the Envelope</h3></div>
+
+    <div class="container">
+        <div class="valentines">
+            <div class="envelope">
+                <div class="card">
+                    <div class="text">
+                        Happy <br> BirthDay Arsu<br> and Be Happy <br>
+                    </div>
+                    <div class="heart"></div>
+                </div>
+            </div>
+            <div class="front"></div>
+        </div>
+    </div>
+
+    <div><h3  class="openit">click the gift box</h3></div>
+
+
+    <div class="gift-box">🎁</div>
+    <div class="gift-message">Happy Birthday! 🎉</div>
+
+    <script>
+        let currentIndex = 0;
+        const messages = document.querySelectorAll('.message');
+        const giftBox = document.querySelector('.gift-box');
+        const giftMessage = document.querySelector('.gift-message');
+
+        // Scroll Handler
+        window.addEventListener('wheel', () => {
+            if(currentIndex < messages.length) {
+                messages[currentIndex].classList.add('visible');
+                currentIndex++;
+                if(currentIndex === messages.length) {
+                    giftBox.classList.add('visible');
+                }
+            }
+        });
+
+        // Gift Click Handler
+        giftBox.addEventListener('click', () => {
+            giftBox.style.transform = 'translate(-50%, -50%) scale(5)';
+            giftBox.style.opacity = '0';
+            
+            giftMessage.style.opacity = '1';
+            giftMessage.style.transition = 'opacity 0.5s';
+            
+            createConfetti();
+        });
+
+        // Confetti Creator (persistent)
+        function createConfetti() {
+            const colors = ['#3f9dfc', '#fa0000', '#00ffb7', '#ffee00', '#ae00ff'];
+            for(let i = 0; i < 200; i++) {
+                const confetti = document.createElement('div');
+                confetti.classList.add('confetti');
+                confetti.style.left = Math.random() * 100 + 'vw';
+                confetti.style.top = Math.random() * 100 + 'vh';
+                confetti.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+                confetti.style.animation = `float ${3 + Math.random() * 5}s infinite`;
+                document.body.appendChild(confetti);
+            }
+        }
+
+        // Mobile Touch Support
+        let touchStartY;
+        window.addEventListener('touchstart', e => {
+            touchStartY = e.touches[0].clientY;
+        });
+        
+        window.addEventListener('touchend', e => {
+            const touchEndY = e.changedTouches[0].clientY;
+            if(touchStartY - touchEndY > 50 && currentIndex < messages.length) {
+                messages[currentIndex].classList.add('visible');
+                currentIndex++;
+                if(currentIndex === messages.length) {
+                    giftBox.classList.add('visible');
+                }
+            }
+        });
+    </script>
+
+
+    <script>
+   var loader = document.getElementById("preloader");
+
+window.addEventListener("load", function (){
+       loader.style.display = "none"
+})
+
+    </script>
+</body>
+            </html>
